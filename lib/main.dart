@@ -7,12 +7,12 @@ import 'package:provider/provider.dart';
 import 'Model/routes.dart';
 import 'View/login.dart';
 import 'View/mainscreen.dart';
-
+import 'firebase_options.dart';
 Future<void> main() async {
  WidgetsFlutterBinding.ensureInitialized();
- // await Firebase.initializeApp(
- //   options: DefaultFirebaseOptions.currentPlatform,
- // );
+ await Firebase.initializeApp(
+   options: DefaultFirebaseOptions.currentPlatform,
+ );
   runApp(ChangeNotifierProvider(create: (BuildContext context) =>chatprovider(),
   child: const MyApp()));
 }

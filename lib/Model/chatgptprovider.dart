@@ -9,7 +9,7 @@ class chatprovider extends ChangeNotifier{
   bool loading =false;
   Future<bool> sendRequest(String description)async
   {
-    print("sending request");
+   // print("sending request");
     loading = true;
     input.add(description);
     notifyListeners();
@@ -30,7 +30,7 @@ class chatprovider extends ChangeNotifier{
     loading = false;
     notifyListeners();
     if(responce.statusCode==200){
-      print(responce.body);
+      //print(responce.body);
       final decoded = jsonDecode(responce.body);
       final ans = decoded['candidates'][0]['content']['parts'][0]['text'];
       count++;
